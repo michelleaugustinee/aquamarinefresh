@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+  <title>Home || Aquamarine</title>
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="shortcut icon" href="images/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;800&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css2?family=Oregano&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
+  <script src="https://kit.fontawesome.com/457a315592.js" crossorigin="anonymous"></script>
+
+  <style>
+    .card-body {
+      color: black;
+    }
+
+    a {
+      text-decoration: none !important;
+    }
+  </style>
+</head>
+
+<body>
+  <%- include('../layouts/navbar1.ejs'); %>
+    <div class="header">
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+            aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+            aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+            aria-label="Slide 4"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
+            aria-label="Slide 5"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5"
+            aria-label="Slide 6"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6"
+            aria-label="Slide 7"></button>
+        </div>
+
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <a href="/productlist">
+              <img src="https://i.ibb.co/z8NwMVf/slideshow1.jpg" class="d-block w-100" alt="..." />
+            </a>
+          </div>
+
+          <div class="carousel-item">
+            <a href="/productlist">
+              <img src="https://i.ibb.co/TT6hxtp/promo.png" class="d-block w-100" alt="..." />
+            </a>
+          </div>
+
+          <div class="carousel-item">
+            <a href="/productlist">
+              <img src="https://i.ibb.co/m82Hr6g/slideshow2.jpg" class="d-block w-100" alt="..." />
+            </a>
+          </div>
+
+          <div class="carousel-item">
+            <a href="/productlist">
+              <img src="https://i.ibb.co/HpVhtC2/slideshow3.jpg" class="d-block w-100" alt="..." />
+            </a>
+          </div>
+
+          <div class="carousel-item">
+            <a href="/productlist">
+              <img src="https://i.ibb.co/F7VBzXf/slideshow4.jpg" class="d-block w-100" alt="..." />
+            </a>
+          </div>
+
+          <div class="carousel-item">
+            <a href="/productlist">
+              <img src="https://i.ibb.co/MRf0qT8/slideshow5.jpg" class="d-block w-100" alt="..." />
+            </a>
+          </div>
+
+          <div class="carousel-item">
+            <a href="/productlist">
+              <img src="https://i.ibb.co/mSHwtB9/slideshow6.jpg" class="d-block w-100" alt="..." />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev">
+        <span class="tombolkiri"><i data-feather="chevron-left" style="color: gray"></i></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next">
+        <span class="tombolkanan"><i data-feather="chevron-right" style="color: gray"></i></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+
+      <div class="d-grid gap-2 mx-auto">
+        <a href="#products" style="text-align: center"><button class="explore-button btn-info" type="button" style="
+              background-color: rgb(207, 207, 207);
+              border-color: rgb(207, 207, 207);
+            ">
+            ↓ See What's New ↓
+          </button></a>
+      </div>
+    </div>
+
+    <!--------------------------------------------- CATEGORIES --------------------------------------------->
+
+    <section class="categories" id="categories" style="margin-top: 5">
+      <h1 class="judulcategories" style="padding-top: 5%"><b>Categories</b></h1>
+
+      <div class="card-group row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+          <div class="card h-100">
+            <img src="https://i.ibb.co/gWwrjWk/redsnapper1.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Fishes</h5>
+              <p class="card-text">
+                We are among the best and recognized suppliers of fish species
+                such as salmon, snapper, mackerel, tuna, pomfret etc.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100">
+            <img src="https://i.ibb.co/L1SdPqS/crab1.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Crabs</h5>
+              <p class="card-text">
+                We are among the best and recognized suppliers of good quality
+                crab species such as soft crab etc.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100">
+            <img src="https://i.ibb.co/h1RTct5/lobster1.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Lobsters</h5>
+              <p class="card-text">
+                We are among the best and recognized suppliers of good quality
+                lobsters species such as sea lobster etc.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="last card h-100">
+            <img src="https://i.ibb.co/zV3T2wP/shrimp1.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Shrimps</h5>
+              <p class="card-text">
+                We are among the best and recognized suppliers of good quality
+                shrimp species such as tiger prawn, white prawn etc.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="last card h-100">
+            <img src="https://i.ibb.co/hyZxVSH/cumi2.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Cephalopods</h5>
+              <p class="card-text">
+                We are among the best and recognized suppliers of good quality
+                cephalopods species such ad squid etc.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!---------------------------------------------PRODUCTS ---------------------------------------------->
+    <section class="products" id="products">
+      <h1 class="judulproducts" style="padding-top: 5%"><b>Products</b></h1>
+      <marquee behavior="scroll" direction="right" scrollamount="12" style="
+          color: rgba(236, 55, 55, 0.959);
+          font-size: 30px;
+          text-shadow: 2px 0px 20px rgb(69, 66, 240);
+          width: 100%;
+        ">
+        New Recommend!</marquee>
+      <div class="box-group active">
+        <% products.forEach((product) => { %>
+          <% if (product.status == 1) { %>
+          <div class="box">
+            <div class="slide-product">
+              <img src="<%= product.imagePath %>" alt="1" />
+              <div class="overlay2">
+                <a href="<%= product.link %>" class="tombolliat">See Product</a>
+              </div>
+            </div>
+            <div class="detail-product">
+              <div class="type">
+                <a href="<%= product.link %>">
+                  <%= product.name %>
+                </a>
+                <span>Recommended</span>
+              </div>
+              <a href="<%= product.link %>" class="harga">Rp <%= product.price %>/kg</a>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="col-md-12"></div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="col-md-12"></div>
+            </div>
+          </div>
+          <% } %>
+          <% }) %>
+      </div>
+
+      <div class="seeallproduct">
+        <a href="/productlist"><button class="see-product-button">
+            <b>See Other Products</b>
+          </button></a>
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev">
+        <span class="tombolkiri"><i data-feather="chevron-left" style="color: gray"></i></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next">
+        <span class="tombolkanan"><i data-feather="chevron-right" style="color: gray"></i></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </section>
+
+    <!--------------------------------------------- ABOUT US --------------------------------------------->
+
+    <section class="about" id="about">
+      <div class="aboutus">
+        <div class="logonya">
+          <img src="https://i.ibb.co/0tJHBJq/logo.png" alt="Aquamarine" style="width: 130px" />
+        </div>
+      </div>
+
+      <h1 class="judulabout" style="padding-top: 5%"><b>About Us</b></h1>
+
+      <div class="isinya">
+        <p>
+          Founded in August of 2021, Aquamarine is a trusted online seafood
+          market for people who are craving seafood. At Aquamarine, we believe
+          everyone deserves to have a high quality and fresh seafood. Our love
+          for the sea helps us deliver only the best quality produce that you
+          can find. Our mission is to help you fulfill your needs through a
+          single click and deliver it on time. We operate 24/7 on shipping line
+          orders just to make sure your orders are fulfilled.
+        </p>
+      </div>
+      <div class="detailabout">
+        <div class="locationpic">
+          <img src="https://i.ibb.co/JR3M9mV/location.jpg" alt="Rumah Michelle" />
+        </div>
+
+        <div class="map">
+          <p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.8332421003124!2d106.75185619132817
+            !3d-6.153083080383815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f7c118d9cf7f%3A0xfac206204b98
+            40f4!2sCasa%20Jardin%20Residence!5e0!3m2!1sen!2sid!4v1631693506448!5m2!1sen!2sid" width="750" height="450"
+              style="border-radius: 15px" allowfullscreen="" loading="lazy"></iframe>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!--------------------------------------------- GALLERY --------------------------------------------->
+    <section class="galeri" id="gallery">
+      <h1 class="judulgallery" style="padding-top: 5%"><b>Gallery</b></h1>
+      <div class="gallery-1">
+        <div>
+          <img src="https://i.ibb.co/vD8w3bH/gallery1.jpg" style="border-radius: 10px" alt="scallop" />
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="col-md-12"></div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="col-md-12"></div>
+          </div>
+        </div>
+
+        <div>
+          <img src="https://i.ibb.co/ynwXm9R/gallery2.jpg" style="border-radius: 10px" alt="lobster" />
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="col-md-12"></div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="col-md-12"></div>
+          </div>
+        </div>
+
+        <div>
+          <img src="https://i.ibb.co/b6Ck40q/gallery3.jpg" style="border-radius: 10px" alt="fish" />
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="col-md-12"></div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="col-md-12"></div>
+          </div>
+        </div>
+
+        <div>
+          <img src="https://i.ibb.co/tHbx2bk/octopus1.jpg" style="border-radius: 10px" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <!--------------------------------------------- CONTACT US --------------------------------------------->
+    <section class="contact" id="contact">
+      <br /><br /><br /><br /><br /><br /><br /><br />
+      <div class="contact-1">
+        <h1><b>Contact Us</b></h1>
+        <div class="container">
+          <div class="row gy-2">
+            <div class="col-6">
+              <div class="kontak">
+                <i class="fas fa-phone-alt"></i>
+                <p>021 345 6789</p>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="kontak">
+                <i class="fab fa-whatsapp-square"></i>
+                <p>+62 887 1960 9350</p>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="kontak">
+                <a href="https://instagram.com/aquamarine"><i class="fab fa-instagram-square"></i>
+                  <p>@aquamarine</p>
+                </a>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="kontak">
+                <a href="mailto:aquamarine@gmail.com"><i class="fas fa-envelope-open-text"></i>
+                  <p>aquamarine@gmail.com</p>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <button class="tombolpertanyaan btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+            aria-controls="offcanvasRight">
+            Click me to ask any questions!
+          </button>
+        </div>
+      </div>
+
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+          <h5 id="offcanvasRightLabel">
+            Please fill out the form below so that we can connect you!
+          </h5>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <div class="container2">
+            <div class="contact-box">
+              <form class="right">
+                <img src="https://i.ibb.co/0tJHBJq/logo.png" style="width: 25%; float: left" alt="" />
+                <h2 style="float: right; margin-bottom: 0%; margin-top: 10px">
+                  Contact Us
+                </h2>
+                <input type="text" id="name" class="field" placeholder="Your Name" />
+                <input type="email" id="email" class="field" placeholder="Your Email" />
+                <input type="text" id="phone" class="field" placeholder="Phone" />
+                <textarea placeholder="Message" id="message" class="field"></textarea>
+                <button type="submit" class="tombolsubmitcontact btn">
+                  Send
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--------------------------------------------- BACK TO TOP --------------------------------------------->
+    <a class="tombolnaik" href="#top"><i class="fa fa-chevron-up"></i></a>
+    <%- include('../layouts/footer.ejs'); %>
+      <script>
+        feather.replace();
+      </script>
+
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+      <script src="../js/app.js"></script>
+
+      <script>
+        var navLinks = document.getElementById("navLinks");
+
+        function showMenu() {
+          navLinks.style.right = "0";
+        }
+
+        function hideMenu() {
+          navLinks.style.right = "-200px";
+        }
+      </script>
+
+      <script>
+        //TODO :
+        $('form').on('submit', (e) => {
+          e.preventDefault();
+
+          const name = $('#name').val().trim();
+          const email = $('#email').val().trim();
+          const phone = $('#phone').val().trim();
+          const message = $('#message').val().trim();
+
+          const data = {
+            name,
+            email,
+            phone,
+            message
+          }
+
+          $.post('email', data, function () {
+            console.log('Server received our data')
+          });
+
+        });;
+      </script>
+</body>
+
+</html>

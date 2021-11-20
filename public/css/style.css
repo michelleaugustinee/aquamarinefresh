@@ -1,0 +1,1525 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* ---------------------------------------------- Logo Picture Preset ----------------------------------------------*/
+.logo {
+  position: static;
+  width: 175px;
+  height: 100px;
+  background: url(../images/logo.png);
+  background-repeat: no-repeat;
+  background-size: 130px;
+  background-position: center;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.logo:hover {
+  color: black;
+}
+
+/* ---------------------------------------------- Search Bar ----------------------------------------------*/
+.search {
+  height: 30px;
+  width: 80%;
+  border-radius: 0%;
+  outline: none;
+  border: 2px solid white;
+  margin-top: 12px;
+  margin-left: 20px;
+}
+
+.tombolsearch {
+  height: 30px;
+  width: 15%;
+  outline: none;
+  border: none;
+  background: white;
+  color: white;
+  border-radius: 0%;
+  margin-right: 35px;
+  margin-top: 12px;
+  font-weight: 700;
+}
+.tombolsearch img {
+  width: 20px;
+  height: 20px;
+  background: white;
+}
+
+/* ---------------------------------------------- Navigation Bar "Inside" Header ----------------------------------------------*/
+
+nav {
+  display: flex;
+  padding: 2% 2%;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+nav img {
+  width: 150px;
+}
+
+.navbar {
+  position: relative;
+  cursor: pointer;
+  z-index: 1000;
+  background: rgb(207, 207, 207);
+}
+
+.navbar ul li {
+  list-style: none;
+  display: inline-block;
+  padding: 8px 12px;
+  position: relative;
+  z-index: 1000;
+}
+
+.navbar ul li a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-size: 15px;
+  z-index: 1000;
+}
+
+.navbar ul li::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: #f44336;
+  display: block;
+  margin: auto;
+  transition: 0.5s;
+  z-index: 1000;
+}
+
+.navbar ul li:hover::after {
+  width: 100%;
+  z-index: 1000;
+}
+
+nav .fa {
+  display: none;
+}
+
+.tombolkiri {
+  background: white;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  padding: 8px;
+  opacity: 0.9;
+  border-radius: 50px;
+  z-index: 1000;
+}
+
+.tombolkanan {
+  background: white;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  padding: 8px;
+  opacity: 0.9;
+  border-radius: 50px;
+  z-index: 1000;
+}
+
+.carousel-inner {
+  width: 800px;
+  height: 500px;
+}
+
+.carousel.item {
+  width: 20%;
+  transition: 2s;
+}
+
+.carousel.item img {
+  width: 800px;
+  height: 500px;
+}
+
+.explore-button {
+  font-family: "Oregano", cursive;
+  margin-top: 30px;
+  display: inline-block;
+  color: rgb(0, 0, 0);
+  border: 3px solid rgb(0, 0, 0);
+  border-radius: 10px;
+  padding: 12px 100px;
+  font-size: 60px;
+  background: transparent;
+  position: relative;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.explore-button:hover {
+  border: 1px solid rgb(0, 0, 0);
+  background: rgb(0, 4, 212);
+  color: rgb(255, 255, 255);
+  transition: 1s;
+}
+/* ---------------------------------------------- Categories ----------------------------------------------  */
+.categories {
+  min-height: 100vh;
+  background: url(../images/background1.png);
+  background-repeat: repeat-y;
+  background-color: rgb(207, 207, 207);
+}
+
+.judulcategories {
+  font-family: "Open Sans", sans-serif;
+  color: black;
+  font-size: 50px;
+  text-align: center;
+  margin-left: 10%;
+}
+
+.card-group {
+  width: 50%;
+  height: 60%;
+}
+
+p.card-text {
+  font-size: 13px;
+}
+
+div.card-group.row.row-cols-1 {
+  margin-left: 25%;
+  width: 60%;
+}
+
+img.card-img-top {
+  width: 100%;
+}
+
+div.col {
+  padding: 0% 3%;
+}
+
+div.last.card.h-100 {
+  width: 100%;
+  margin-left: 60%;
+}
+
+/* ---------------------------------------------- Products ---------------------------------------------*/
+.products {
+  min-height: 100vh;
+  background: url(../images/background1.png);
+  background-repeat: repeat-y;
+  background-color: rgb(207, 207, 207);
+}
+
+h1.judulproducts {
+  margin: 0% 0% 0% 11%;
+}
+
+.box {
+  width: 300px;
+  box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  left: 13%;
+}
+
+.box-group {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.slide-product {
+  height: 300px;
+  position: relative;
+}
+
+.slide-product:hover .overlay2 {
+  visibility: visible;
+}
+
+.slide-product img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  box-sizing: border-box;
+}
+
+.detail-product {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+.type {
+  display: flex;
+  flex-direction: column;
+}
+
+.type a {
+  color: black;
+  margin: 5px 0px;
+  font-weight: 700;
+  padding-right: 8px;
+}
+
+.type span {
+  color: red;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding-left: 3px;
+}
+
+.harga {
+  color: black;
+  font-weight: 600;
+  font-size: 1.1rem;
+  font-family: "Open Sans", sans-serif;
+}
+
+.overlay2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 255, 0.151);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+}
+
+.tombolliat {
+  width: 160px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  color: red;
+  font-weight: 700;
+  border-radius: 20px;
+  box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.2);
+}
+
+.tombolliat:hover {
+  color: white;
+  background-color: rgb(0, 26, 173);
+  transition: all ease 0.3s;
+}
+
+.judulproducts {
+  font-family: "Open Sans", sans-serif;
+  color: black;
+  font-size: 50px;
+  margin-bottom: 80px;
+  text-align: center;
+  margin-left: 250px;
+  margin-right: 100px;
+}
+
+.products-1 {
+  display: flex;
+}
+
+.seeallproduct {
+  width: 100%;
+  height: 30%;
+}
+
+.see-product-button {
+  padding: 1%;
+  width: 15%;
+  border-radius: 20px;
+  margin: 2% 0 0 45%;
+  color: red;
+  font-family: "Nunito", sans-serif;
+  background-color: transparent;
+  box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.2);
+}
+
+.see-product-button:hover {
+  color: white;
+  background-color: rgb(0, 26, 173);
+  transition: all ease 0.3s;
+  box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.8);
+}
+/* ---------------------------------------------- Full Header Display ---------------------------------------------- */
+.header {
+  width: 100%;
+  height: 100vh;
+  background: rgb(207, 207, 207);
+}
+
+.header header {
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header img {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.568);
+  mix-blend-mode: overlay;
+}
+
+nav .fa {
+  display: none;
+}
+
+/* ---------------------------------------------- About Us ---------------------------------------------- */
+
+.about {
+  min-height: 100vh;
+  margin: auto;
+  display: flex;
+  background: url(../images/background1.png);
+  background-repeat: repeat-y;
+  background-color: rgb(207, 207, 207);
+  font-family: "Open Sans", sans-serif;
+  color: black;
+  word-spacing: 2px;
+  letter-spacing: 0.5px;
+  flex-wrap: wrap;
+}
+
+.aboutus {
+  display: flex;
+  margin-left: 17%;
+}
+
+.judulabout {
+  display: flex;
+  margin-left: 22%;
+  margin-top: -2%;
+  margin-bottom: 2%;
+}
+
+.isinya {
+  text-align: center;
+  width: 70%;
+  font-size: 20px;
+  margin-left: 18%;
+}
+
+.detailabout {
+  flex-direction: row;
+  width: 100%;
+}
+
+.locationpic img {
+  display: flex;
+  width: 43%;
+  height: 450px;
+  border-radius: 20px;
+  margin-left: 12%;
+}
+
+.map iframe {
+  display: flex;
+  margin-left: 56%;
+  width: 43%;
+  margin-top: -29.7%;
+}
+/* ---------------------------------------------- Gallery ---------------------------------------------- */
+.galeri {
+  min-height: 100vh;
+  background: url(../images/background1.png);
+  background-repeat: repeat-y;
+  background-color: rgb(207, 207, 207);
+}
+
+.judulgallery {
+  font-family: "Open Sans", sans-serif;
+  color: black;
+  font-size: 50px;
+  margin-bottom: 30px;
+  text-align: center;
+  margin-left: 200px;
+}
+
+.gallery-1 {
+  margin-left: 28%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-items: center;
+}
+
+.gallery-1 img {
+  width: 26rem;
+  height: 15rem;
+  margin-bottom: 20px;
+}
+/*---------------------------------------------- Contacts Us ----------------------------------------------  */
+.contact {
+  min-height: 100vh;
+  background: url(../images/background1.png);
+  background-repeat: repeat-y;
+  background-color: rgb(207, 207, 207);
+}
+
+.contact-1 {
+  margin-left: 15%;
+  width: 80%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url(../images/background2.png);
+  background-position: center;
+  background-size: cover;
+  border-radius: 10px;
+  text-align: center;
+  padding: 100px 0;
+}
+
+.contact h1 {
+  color: black;
+  margin-bottom: 40px;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+.kontak p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 150%;
+  color: black;
+  display: inline-block;
+}
+
+.fa-phone-alt {
+  margin: 0 30px 0 0;
+  border: 3px solid black;
+  padding: 8px;
+  border-radius: 50%;
+}
+
+.fa-whatsapp-square {
+  margin: 0 78px 0 0;
+  font-size: 220%;
+}
+
+.fa-instagram-square {
+  margin: 0 30px 0 0;
+  font-size: 220%;
+  text-decoration: none !important;
+  color: black;
+}
+
+.fa-envelope-open-text {
+  margin: 0 30px 0 0;
+  font-size: 200%;
+  text-decoration: none !important;
+  color: black;
+}
+
+.container2 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2% 0% 2% 0%;
+  margin-left: 1%;
+}
+
+.container2:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: url("../images/logo.jpg") no-repeat center;
+  background-size: cover;
+  filter: blur(50px);
+  z-index: -1;
+}
+
+.contact-box {
+  width: 87%;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0px 0px 19px 5px rgba(0, 0, 0, 0.19);
+  border-radius: 10px;
+}
+
+.right {
+  padding: 10% 10% 10% 10%;
+}
+
+h2 {
+  position: relative;
+  width: 75%;
+}
+
+h2:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  height: 4px;
+  width: 50px;
+  border-radius: 2px;
+  background-color: #2c20d3;
+}
+
+.field {
+  width: 100%;
+  border: 2px solid rgba(0, 0, 0, 0);
+  outline: none;
+  background-color: rgba(230, 230, 230, 0.6);
+  padding: 0.5rem 1rem;
+  font-size: 1.1rem;
+  margin-bottom: 22px;
+  transition: 0.3;
+}
+
+.field:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+textarea {
+  min-height: 150px;
+}
+
+.tombolpertanyaan {
+  margin-left: 38%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+button.tombolpertanyaan {
+  border: 3px black solid;
+  background-color: transparent;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+button.tombolpertanyaan:hover {
+  background-color: blue;
+  color: white;
+}
+
+.tombolsubmitcontact {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background-color: hsl(236, 63%, 49%);
+  color: #fff;
+  font-size: 1.1rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.tombolsubmitcontact:hover {
+  background-color: hsl(239, 63%, 42%);
+}
+
+.field:focus {
+  border: 2px solid rgba(30, 85, 250, 0.47);
+  background-color: #fff;
+}
+
+.offcanvas-header h5 {
+  text-align: center;
+}
+
+/*--------------------------------------------- TOMBOL NAIK ---------------------------------------------*/
+.tombolnaik {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  background: transparent;
+  color: black;
+  bottom: 40px;
+  right: 50px;
+  transition: 3s;
+  z-index: 1000;
+}
+
+/*--------------------------------------------- Footer ---------------------------------------------*/
+footer {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  text-align: center;
+  background: grey;
+  height: auto;
+  font-family: "Open Sans";
+  color: black;
+}
+
+.logo-footer {
+  width: 30px;
+  margin: auto;
+  background-color: gray;
+}
+
+.icons .fa {
+  color: rgb(177, 27, 27);
+  margin: 0 13px;
+  cursor: pointer;
+  padding: 18px 0;
+}
+
+ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+.footer-section {
+  background: grey;
+  position: relative;
+  padding: 0%;
+}
+
+.single-cta i {
+  color: red;
+  font-size: 30px;
+  float: center;
+  margin-top: 8px;
+}
+
+.cta-text {
+  padding-left: 15px;
+  display: inline-block;
+}
+
+.cta-text h4 {
+  color: black;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.cta-text span {
+  color: black;
+  font-size: 15px;
+}
+
+.footer-content {
+  position: relative;
+  z-index: 2;
+  margin-left: 25%;
+  margin-top: -4%;
+}
+
+.footer-pattern img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 330px;
+  background-size: cover;
+  background-position: 100% 100%;
+}
+
+.footer-logo {
+  margin-bottom: 5px;
+}
+
+.footer-logo img {
+  max-width: 200px;
+}
+
+.footer-text p {
+  margin-bottom: 14px;
+  font-size: 14px;
+  color: black;
+  line-height: 28px;
+}
+
+.footer-widget-heading h3 {
+  color: black;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.footer-widget-heading h3::before {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  height: 2px;
+  width: 50px;
+  background: red;
+}
+
+.footer-widget ul li {
+  display: block;
+  float: left;
+  width: 50%;
+  margin-bottom: 12px;
+}
+
+.footer-widget ul li a:hover {
+  color: blue;
+}
+
+.footer-widget ul li a {
+  color: black;
+  text-transform: capitalize;
+}
+
+.copyright-text p {
+  margin-right: 3%;
+  font-size: 14px;
+  color: black;
+}
+
+.copyright-text span {
+  color: blue;
+}
+
+/*--------------------------------------------------- Quantity Box -------------------------------------------------*/
+.quantity {
+  display: inline-block;
+}
+
+.quantity .input-text.qty {
+  width: 35px;
+  height: 39px;
+  padding: 0 5px;
+  text-align: center;
+  background-color: transparent;
+  border: 1px solid #efefef;
+}
+
+.quantity.buttons_added {
+  text-align: left;
+  position: relative;
+  white-space: nowrap;
+  vertical-align: top;
+}
+
+.quantity.buttons_added input {
+  display: inline-block;
+  margin: 0;
+  vertical-align: top;
+  box-shadow: none;
+}
+
+.quantity.buttons_added .minus,
+.quantity.buttons_added .plus {
+  padding: 7px 10px 8px;
+  height: 41px;
+  background-color: #ffffff;
+  border: 1px solid #efefef;
+  cursor: pointer;
+}
+
+.quantity.buttons_added .minus {
+  border-right: 0;
+}
+
+.quantity.buttons_added .plus {
+  border-left: 0;
+}
+
+.quantity.buttons_added .minus:hover,
+.quantity.buttons_added .plus:hover {
+  background: #eeeeee;
+}
+
+.quantity input::-webkit-outer-spin-button,
+.quantity input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  margin: 0;
+}
+
+.quantity.buttons_added .minus:focus,
+.quantity.buttons_added .plus:focus {
+  outline: none;
+}
+
+/*--------------------------------------------------- Media Responsive -------------------------------------------------*/
+@media screen and (max-width: 640px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  nav .fa {
+    display: block;
+    color: blue;
+    margin: 10px;
+    font-size: 22px;
+    cursor: pointer;
+  }
+
+  .nav-links ul {
+    display: block;
+    margin-left: 15%;
+  }
+
+  .nav-links {
+    position: absolute;
+    background: rgb(163, 163, 163);
+    height: 100vh;
+    width: 200px;
+    top: 0;
+    right: -200px;
+    text-align: left;
+    z-index: 1000;
+    transition: 1s;
+  }
+
+  a.nav-link.active {
+    color: black;
+  }
+
+  svg.feather.feather-shopping-cart {
+    color: black;
+  }
+
+  a#navbarDropdown.nav-link.dropdown-toggle::after {
+    color: black;
+  }
+
+  svg.feather.feather-user {
+    color: black;
+  }
+
+  /*-------------------------- Logo -----------------------*/
+  .logo {
+    background-size: 100px;
+    width: 80px;
+    display: flex;
+  }
+
+  /*----------------------- Carousel ---------------------*/
+
+  .carousel-inner {
+    width: 100%;
+    height: 20%;
+  }
+
+  .tombolkiri {
+    margin-bottom: 250px;
+  }
+
+  .tombolkanan {
+    margin-bottom: 250px;
+  }
+
+  .carousel-indicators {
+    position: absolute;
+    border-bottom: 1000px;
+  }
+
+  img.d-block.w-100 {
+    width: 100%;
+    height: 300px;
+  }
+
+  /*----------------------- Explore Button ---------------------*/
+  .explore-button {
+    position: relative;
+    font-size: 40px;
+    width: 100%;
+    padding: 0;
+    z-index: 900;
+  }
+
+  /*----------------------- Categories ---------------------*/
+  .categories {
+    width: 100%;
+    background-size: 100px;
+    height: 200%;
+    margin-top: -23%;
+  }
+
+  .judulcategories {
+    font-size: 30px;
+  }
+
+  .card-group {
+    margin-left: 30%;
+    margin-right: 10%;
+  }
+
+  .card img {
+    height: 150px;
+    width: 100%;
+  }
+
+  .card-text {
+    font-size: 14pt;
+  }
+
+  div.last.card.h-100 {
+    margin-left: 0%;
+  }
+
+  /*----------------------- Products ---------------------*/
+  marquee {
+    width: 100%;
+  }
+
+  .products {
+    background-size: 100px;
+    padding-top: 10%;
+    margin-top: -42px;
+  }
+
+  .judulproducts {
+    font-size: 30px;
+    margin: 40px 0 80px 100px;
+  }
+
+  .box {
+    margin: 10% 0% 5% 14%;
+    width: 65%;
+  }
+
+  .box-group {
+    margin-top: -50px;
+  }
+
+  .slide-product {
+    width: 100%;
+  }
+
+  .detail-product {
+    font-size: 20px;
+  }
+
+  .type {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .type a {
+    color: black;
+    margin: 5px 0px;
+    font-weight: 700;
+    font-size: 14px;
+    padding-right: 8px;
+  }
+
+  .type span {
+    color: red;
+    border: 2px solid black;
+    border-radius: 10px;
+    font-size: 13px;
+    padding-left: 3px;
+    padding-right: 3px;
+  }
+
+  .harga {
+    color: black;
+    font-weight: 600;
+    font-size: 13px;
+    font-family: "Open Sans", sans-serif;
+    margin-left: 25px;
+  }
+
+  button.see-product-button {
+    width: 30%;
+  }
+
+  /*----------------------- About Us ---------------------*/
+  .about {
+    background-size: 100px;
+  }
+
+  .logonya {
+    margin-left: 30%;
+    margin-top: -5%;
+  }
+
+  h1.judulabout {
+    margin-left: 10%;
+    margin-top: 5%;
+  }
+
+  .isinya {
+    margin-top: 1%;
+    margin-left: 20%;
+    height: 20%;
+  }
+
+  .isinya h1 {
+    font-size: 30px;
+    margin-left: 35%;
+    width: 100%;
+  }
+
+  .isinya p {
+    font-size: 20px;
+    width: 100%;
+  }
+
+  .locationpic img {
+    margin: 0% 0% 0% 19%;
+    width: 80%;
+    height: 50%;
+  }
+
+  .map {
+    width: 100%;
+    margin: 32% 0% 0% -37%;
+  }
+
+  .map iframe {
+    width: 80%;
+    height: 70%;
+    min-height: 60vh;
+  }
+  /*----------------------- Gallery ---------------------*/
+  .galeri {
+    background-size: 100px;
+  }
+
+  .judulgallery {
+    font-size: 30px;
+    margin-top: -8px;
+    margin-left: 80px;
+  }
+
+  .gallery-1 {
+    margin: 50px 0 0 140px;
+  }
+
+  .gallery-1 img {
+    margin-bottom: 10px;
+    width: 85%;
+    height: 85%;
+  }
+
+  .gallery-1 img:hover {
+    box-shadow: 8px 10px 16px 2px grey;
+  }
+
+  /*----------------------- Contact Us ---------------------*/
+  .contact-1 {
+    margin-left: 25%;
+    width: 70%;
+  }
+
+  .contact {
+    background-size: 100px;
+  }
+
+  .kontak p {
+    font-size: 60%;
+    margin: 0 40% 0 0;
+    width: 80%;
+  }
+
+  .kontak a {
+    font-size: 18px;
+  }
+
+  .fa-phone-alt {
+    margin: 0 40% 0 20%;
+  }
+
+  i.fab.fa-whatsapp-square {
+    margin: 0 40% 0 20%;
+    color: black;
+  }
+
+  i.fab.fa-whatsapp-square p {
+    margin: 0 60% 0 0;
+  }
+
+  i.fab.fa-instagram-square {
+    margin: 0 40% 0 20%;
+  }
+
+  i.fas.fa-envelope-open-text {
+    margin: 0 40% 0 20%;
+  }
+
+  .tombolpertanyaan {
+    margin: 10% 10% 0% 10%;
+  }
+
+  /*----------------------- Footer ---------------------*/
+  .footer-content {
+    margin: 0 20px 0 20px;
+  }
+
+  .footer-bottom {
+    margin: 0 20px 0 20px;
+  }
+}
+
+/*--------------------------------------------------- Tablet Media Responsive -------------------------------------------------*/
+@media screen and (min-width: 641px) and (max-width: 960px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  nav#top.navbar.navbar-expand-sm {
+    justify-content: space-between;
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  nav .fa {
+    display: block;
+    color: blue;
+    margin: 10px;
+    font-size: 22px;
+    cursor: pointer;
+  }
+
+  .nav-links ul {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    background: rgb(163, 163, 163);
+    height: 100vh;
+    width: 200px;
+    top: 0;
+    right: -200px;
+    text-align: left;
+    z-index: 1000;
+    transition: 1s;
+  }
+
+  a.nav-link.active {
+    color: black;
+  }
+
+  svg.feather.feather-shopping-cart {
+    color: black;
+  }
+
+  a#navbarDropdown.nav-link.dropdown-toggle::after {
+    color: black;
+  }
+
+  svg.feather.feather-user {
+    color: black;
+  }
+
+  /*-------------------------- Logo -----------------------*/
+  .logo {
+    background-size: 100px;
+    width: 80px;
+    display: flex;
+  }
+
+  /*----------------------- Carousel ---------------------*/
+
+  .carousel-inner {
+    width: 100%;
+    height: 20%;
+  }
+
+  .tombolkiri {
+    margin-bottom: 200%;
+  }
+
+  .tombolkanan {
+    margin-bottom: 200%;
+  }
+
+  .carousel-indicators {
+    position: absolute;
+    border-bottom: 1000px;
+  }
+
+  img.d-block.w-100 {
+    width: 100%;
+    height: 300px;
+  }
+
+  /*----------------------- Explore Button ---------------------*/
+  .explore-button {
+    position: relative;
+    font-size: 40px;
+    width: 50%;
+    padding: 0;
+    z-index: 2;
+  }
+
+  /*----------------------- Categories ---------------------*/
+  section#categories.categories {
+    min-height: 80.5vh;
+  }
+
+  .categories {
+    width: 100%;
+    background-size: 100px;
+    margin-top: -15%;
+  }
+
+  .judulcategories {
+    font-size: 30px;
+    margin-bottom: 5%;
+    margin-left: 13%;
+  }
+
+  div.card-group.row.row-cols-1 {
+    margin-left: 26%;
+  }
+
+  .card img {
+    height: 250px;
+    width: 100%;
+  }
+
+  div.card-body {
+    padding: 0 4% 0 4%;
+  }
+
+  h5.card-title {
+    font-size: 20px;
+  }
+
+  p.card-text {
+    font-size: 15px;
+  }
+
+  div.last.card.h-100 {
+    margin: 0% 0% 0% 0%;
+  }
+
+  /*----------------------- Products ---------------------*/
+  .products {
+    background-size: 100px;
+  }
+
+  .judulproducts {
+    font-size: 30px;
+  }
+
+  h1.judulproducts {
+    margin: 0% 0% 0% 13%;
+  }
+
+  .box {
+    margin: 5% 0% 0% 8%;
+    width: 70%;
+  }
+
+  .box-group {
+    margin-top: -50px;
+  }
+
+  .slide-product {
+    width: 100%;
+  }
+
+  .detail-product {
+    font-size: 20px;
+  }
+
+  .type {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .type a {
+    color: black;
+    margin: 5px 0px;
+    font-weight: 700;
+    font-size: 14px;
+    padding-right: 8px;
+  }
+
+  .type span {
+    color: red;
+    border: 2px solid black;
+    border-radius: 10px;
+    font-size: 13px;
+    padding-left: 3px;
+    padding-right: 3px;
+  }
+
+  .harga {
+    color: black;
+    font-weight: 600;
+    font-size: 13px;
+    font-family: "Open Sans", sans-serif;
+    margin-left: 25px;
+  }
+
+  button.see-product-button {
+    width: 30%;
+    margin-left: 42%;
+    margin-bottom: 10%;
+  }
+
+  /*----------------------- About Us ---------------------*/
+  .about {
+    background-size: 100px;
+  }
+
+  .logonya {
+    margin-left: 30%;
+    margin-top: -40%;
+  }
+
+  h1.judulabout {
+    margin-left: 10%;
+  }
+
+  .isinya {
+    margin-top: 1%;
+    margin-left: 20%;
+    height: 20%;
+  }
+
+  .isinya h1 {
+    font-size: 30px;
+    margin-left: 35%;
+    width: 100%;
+  }
+
+  .isinya p {
+    font-size: 20px;
+    width: 100%;
+  }
+
+  .locationpic img {
+    margin: 0% 0% 0% 16%;
+    width: 80%;
+    height: 50%;
+  }
+
+  .map {
+    width: 100%;
+    margin: 32% 0% 0% -40%;
+  }
+
+  .map iframe {
+    width: 80%;
+    height: 70%;
+    min-height: 60vh;
+  }
+
+  /*----------------------- Gallery ---------------------*/
+  .galeri {
+    background-size: 100px;
+  }
+
+  .judulgallery {
+    font-size: 30px;
+    margin-left: 80px;
+  }
+
+  .gallery-1 {
+    margin: 5% 0 0 20%;
+  }
+
+  .gallery-1 img {
+    margin-bottom: 0;
+    margin-left: 4%;
+    width: 80%;
+    height: 80%;
+    box-shadow: 8px 10px 16px 2px grey;
+  }
+
+  /*----------------------- Contact Us ---------------------*/
+  .contact-1 {
+    margin-left: 21%;
+    width: 70%;
+    margin-top: -15%;
+  }
+
+  .contact {
+    background-size: 100px;
+    min-height: 100vh;
+  }
+
+  .kontak p {
+    font-size: 100%;
+    margin: 0 40% 20% 2%;
+    width: 80%;
+  }
+
+  .kontak a {
+    font-size: 18px;
+  }
+
+  .fa-phone-alt {
+    margin: 0 40% 0 20%;
+  }
+
+  i.fab.fa-whatsapp-square {
+    margin: 0 40% 0 20%;
+    color: black;
+  }
+
+  i.fab.fa-whatsapp-square p {
+    margin: 0 60% 0 0;
+  }
+
+  i.fab.fa-instagram-square {
+    margin: 0 40% 0 20%;
+  }
+
+  i.fas.fa-envelope-open-text {
+    margin: 0 40% 0 20%;
+  }
+
+  .contact-box {
+    grid-template-columns: 1fr;
+  }
+  .left {
+    height: 200px;
+  }
+
+  .tombolpertanyaan {
+    margin: 0% 0% 0% 25%;
+  }
+
+  /*----------------------- Footer ---------------------*/
+  .footer-content {
+    margin: 0 20px 0 20px;
+  }
+
+  .footer-bottom {
+    margin: 0 20px 0 20px;
+  }
+}

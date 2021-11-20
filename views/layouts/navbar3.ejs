@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+    <title>Product List || Aquamarine</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="shortcut icon" href="images/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Oregano&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet"></script>
+    <script src="https://kit.fontawesome.com/457a315592.js" crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            background-color: rgb(207, 207, 207);
+            background: url(../images/background2.png);
+            background-repeat: repeat-y;
+            height: 100%;
+            width: 100%;
+            background-position: center;
+            background-size: cover;
+            position: relative;
+        }
+
+        .overlay {
+            width: 100%;
+            height: 110%;
+            background: black;
+            opacity: .2;
+            position: absolute;
+            background-size: cover;
+            z-index: -1000;
+        }
+
+        .card-body {
+            color: black;
+        }
+
+        a {
+            text-decoration: none !important;
+        }
+
+        .tombolsearch {
+            width: 30px;
+            height: 29.5px;
+            margin: 0% 0% 0% 0%;
+        }
+
+        .searchbar {
+            border: none;
+            height: 30px;
+            width: 50%;
+        }
+
+
+        @media screen and (min-width: 641px) and (max-width: 960px) {
+            body {
+                background-color: rgb(207, 207, 207);
+                background: url(../images/background2.png);
+                overflow-y: hidden;
+                width: 100%;
+                background-position: center;
+                background-size: cover;
+                position: relative;
+            }
+
+            .searchbar {
+                width: 100%;
+            }
+
+            .tombolsearch {
+                width: 30px;
+                height: 29.5px;
+                margin: 0% 0% 0% 0%;
+            }
+
+            .linkcart {
+                margin-left: 5%;
+            }
+
+            .linkwishlist {
+                margin-left: 18%;
+            }
+        }
+
+        nav .linkcart span {
+            padding-left: 5px;
+        }
+
+        nav .linkwishlist span {
+            padding-left: 5px;
+        }
+
+        .linkcart a {
+            font-size: 14px;
+            color: white;
+            background: rgba(0, 0, 219, 0.753);
+            padding: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .linkwishlist a {
+            font-size: 14px;
+            color: white;
+            background: rgba(0, 0, 219, 0.753);
+            padding: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .linkcart ion-icon {
+            vertical-align: middle;
+            font-size: 20px;
+            padding-right: 5px;
+        }
+
+        .linkwishlist ion-icon {
+            vertical-align: middle;
+            font-size: 20px;
+            padding-right: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="overlay"></div>
+
+    <nav class="navbar navbar-expand-sm" style="background-color: #a6a6a6; background-size: cover;">
+        <div class="container">
+            <a class="logo" href="/"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="navbar-collapse" id="navbarScroll">
+                <input class="searchbar" type="search" placeholder="Search for Other Products"
+                    style="padding-left: 20px;">
+                <button class="tombolsearch" type="submit"><img src="images/search.png"></button>
+                </form>
+            </div>
+
+            <div class="linkcart">
+                <a href="/cart">
+                    <ion-icon name="cart"></ion-icon>Your Cart
+                </a>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="col-md-12"></div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="col-md-12"></div>
+                </div>
+            </div>
+
+            <div class="linkwishlist">
+                <a href="/wishlist">
+                    <ion-icon name="heart"></ion-icon>Your Wishlist
+                </a>
+            </div>
+        </div>
+    </nav>
+
+</body>
+
+</html>

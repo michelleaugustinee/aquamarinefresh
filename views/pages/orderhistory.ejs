@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+    <title>Order History || Aquamarine</title>
+
+    <link rel="shortcut icon" href="images/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&family=Oregano&display=swap"
+        rel="stylesheet">
+
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato&family=Poppins&display=swap');
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(207, 207, 207);
+            background: url(../images/background2.png);
+            min-height: 100vh;
+            width: 100%;
+            background-position: center;
+            background-size: cover;
+            position: relative;
+        }
+
+        .overlay {
+            width: 100%;
+            height: 120%;
+            background: black;
+            opacity: .2;
+            position: fixed;
+            z-index: -1000;
+        }
+
+        .logo {
+            margin-left: 60px;
+            padding: 50px;
+            position: relative;
+            width: 120px;
+            height: 120px;
+            background: url(../images/logo.png);
+            background-repeat: no-repeat;
+            background-size: 130px;
+            background-position: center;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .title {
+            font-family: 'Open Sans', sans-serif;
+            justify-content: center;
+            color: black;
+            text-align: center;
+        }
+
+        .borderluar {
+            background-color: #c7d0d8;
+            margin: 2% 20% 5% 20%;
+            border: 3px solid grey;
+            border-radius: 5px;
+
+        }
+
+        .borderdalem {
+            background-color: #b1bcc5;
+            width: 95%;
+            height: 95%;
+            border-radius: 5px;
+            margin-bottom: 2%;
+            margin-left: 24px;
+        }
+
+        .garishorizontal1 {
+            background: #d9d9d9;
+            width: 150%;
+            height: 4px;
+            display: inline-block;
+        }
+
+        .table-responsive {
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            padding: 0.5rem 0rem
+        }
+
+        .order-images {
+            width: 40%;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        td.text-muted {
+            margin-top: 70%;
+        }
+
+        .text {
+            color: #bbb
+        }
+
+        .table thead th {
+            text-transform: uppercase;
+            color: black;
+            font-size: 12px
+        }
+
+        .table thead th,
+        .table td,
+        .table th {
+            border: none;
+            overflow: auto auto
+        }
+
+        tbody tr td .fa-cc-mastercard,
+        tbody tr td .fa-cc-paypal,
+        tbody tr td .fa-mobile {
+            color: black;
+        }
+
+        tbody tr td.text-muted {
+            font-family: 'Lato', sans-serif;
+            color: black;
+        }
+
+        @media screen and (max-width: 640px) {
+            .borderluar {
+                margin: 5% 5% 10% 5%;
+            }
+
+            .borderdalem {
+                margin: 0% 2.5% 2.5% 2.5%;
+            }
+
+            td.d-flex {
+                font-size: 15px;
+                padding: 0% 5% 0% 0%;
+            }
+
+            img.order-images {
+                width: 100%;
+            }
+
+            td #text {
+                font-size: 2%;
+            }
+        }
+
+        @media screen and (min-width: 641px) and (max-width: 960px) {
+            .borderluar {
+                margin: 5% 5% 10% 5%;
+            }
+
+            .borderdalem {
+                margin: 0% 2.5% 2.5% 2.5%;
+            }
+
+            td.d-flex {
+                font-size: 15px;
+                padding: 0% 5% 0% 0%;
+            }
+
+            img.order-images {
+                width: 50%
+            }
+
+            td #text {
+                font-size: 2%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="overlay"></div>
+
+    <a href="/">
+        <div class="logo"></div>
+    </a>
+
+    <div class="title">
+        <h1><b>Order History</b></h1>
+    </div>
+
+    <div class="borderluar">
+        <div class="borderdalem">
+            <div class="collapse navbar-collapse" id="navbarNav">
+            </div>
+            </nav>
+
+            <div class="table-responsive mt-3">
+                <table class="table table-borderless">
+                    <thead>
+                        <tr>
+                            <th scope="col">Item</th>
+                            <th scope="col">Payment</th>
+                            <th scope="col">Date</th>
+                            <th scope="col" class="text-right">Amount</th>
+                        </tr>
+                        <tr scope="col" class="garishorizontal1" style="width: 444%;"></tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td scope="row">
+                                <a href="/salmon">
+                                    <img src="images/salmon.jpg" alt="salmon" class="order-images">
+                                </a>
+                                Salmon 1 kg <br> <br>
+
+                                <a href="/shrimp">
+                                    <img src="images/shrimp1.jpg" alt="shrimp" class="order-images">
+                                </a>
+                                Shrimp 1 kg
+                            </td>
+                            <td><span class="fa fa-cc-mastercard"></span></td>
+                            <td class="text-muted">2 August 2021, 12:30 PM</td>
+                            <td class="d-flex justify-content-end align-items-center"> </span> Rp 424.000 </td>
+                        </tr>
+
+                        <tr scope="col" class="garishorizontal1" style="width: 444%;"></tr>
+
+                        <tr>
+                            <td scope="row">
+                                <a href="/lobster">
+                                    <img src="images/lobster1.jpg" alt="lobster" class="order-images"
+                                        style="cursor: pointer;">
+                                </a>
+                                Lobster 2 kg
+
+                            </td>
+
+                            <td><span class="fa fa-cc-paypal"></span></td>
+                            <td class="text-muted">27 August 2021, 2:00 PM</td>
+                            <td class="d-flex justify-content-end align-items-center"> </span> Rp 350.000 </td>
+                        </tr>
+
+                        <tr scope="col" class="garishorizontal1" style="width: 444%;"></tr>
+
+                        <tr>
+                            <td scope="row">
+                                <a href="/scallop">
+                                    <img src="images/gallery1.jpg" alt="scallop" class="order-images">
+                                </a>
+                                Scallop 2 kg <br> <br>
+
+                                <a href="octopus.html">
+                                    <img src="images/octopus2.jpg" alt="octopus" class="order-images">
+                                </a>
+                                Octopus 1 kg
+
+                            </td>
+                            <td><span class="fa fa-mobile mr-lg-0"></span> BCA </td>
+                            <td class="text-muted">1 September 2020, 8:30 PM</td>
+                            <td class="d-flex justify-content-end align-items-center"> </span> Rp 420.000 </td>
+                        </tr>
+
+                        <tr scope="col" class="garishorizontal1" style="width: 444%;"></tr>
+
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>

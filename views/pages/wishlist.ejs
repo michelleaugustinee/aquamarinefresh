@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Wish List || Aquamarine</title>
+
+    <link rel="shortcut icon" href="images/logo.png">
+
+    <script src="https://kit.fontawesome.com/457a315592.js" crossorigin="anonymous"></script>
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+
+    <style>
+        @charset "utf-8";
+
+        @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,600);
+
+        html,
+        html a {
+            -webkit-font-smoothing: antialiased;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+            overflow-x: hidden;
+        }
+
+        body {
+            background-color: #fff;
+            color: #666;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 14px;
+            margin: 0 auto;
+        }
+
+        a {
+            border: 0 none;
+            outline: 0;
+            text-decoration: none;
+        }
+
+        strong {
+            font-weight: bold;
+        }
+
+        p {
+            margin: 0.75rem 0 0;
+        }
+
+        h1 {
+            font-size: 0.75rem;
+            font-weight: normal;
+            margin: 0;
+            padding: 0;
+        }
+
+        input,
+        button {
+            border: 0 none;
+            outline: 0 none;
+        }
+
+        button {
+            background-color: #666;
+            color: #fff;
+        }
+
+        button:hover,
+        button:focus {
+            background-color: #555;
+        }
+
+        img,
+        .basket-module,
+        .basket-labels,
+        .basket-product {
+            width: 100%;
+        }
+
+        input,
+        button,
+        .basket,
+        .basket-module,
+        .basket-labels,
+        .item,
+        .price,
+        .quantity,
+        .subtotal,
+        .basket-product,
+        .product-image,
+        .product-details {
+            float: left;
+        }
+
+        .price:before,
+        .subtotal:before,
+        .subtotal-value:before,
+        .total-value:before,
+        .promo-value:before {
+            content: 'Rp. ';
+            font-weight: 700;
+            color: black;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        main {
+            clear: both;
+            font-size: 0.75rem;
+            margin: 0 auto;
+            padding: 1rem 0;
+            width: 960px;
+        }
+
+        .title {
+            font-family: 'Open Sans', sans-serif;
+            justify-content: center;
+            font-size: 200px;
+            position: relative;
+            text-align: center;
+            margin-right: 30px;
+        }
+
+        .borderluar {
+            height: 550px;
+            width: 1000px;
+            border: 3px solid grey;
+            border-radius: 5px;
+            background-color: #c7d0d8;
+        }
+
+        .borderdalem {
+            background-color: #b1bcc5;
+            width: 95%;
+            height: 95%;
+            border-radius: 5px;
+            margin-top: 13px;
+            margin-left: 24px;
+        }
+
+        .basket,
+        aside {
+            padding: 0;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        .basket {
+            width: 70%;
+        }
+
+        .basket-module {
+            color: #111;
+            font-size: 14px;
+            margin-left: 20px;
+            margin-bottom: 5px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.3125rem;
+        }
+
+        .promo-code-field {
+            border: 1px solid #ccc;
+            padding: 0.5rem;
+            text-transform: uppercase;
+            transition: all 0.2s linear;
+            width: 48%;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            -o-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+        }
+
+        .promo-code-field:hover,
+        .promo-code-field:focus {
+            border: 1px solid #999;
+        }
+
+        .promo-code-cta {
+            border-radius: 4px;
+            font-size: 14px;
+            margin-left: 0.625rem;
+            margin-top: -0.225rem;
+            padding: 0.6875rem 1.25rem 0.625rem;
+        }
+
+        .basket-labels {
+            border-bottom: 3px solid #ccc;
+            width: 102%;
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            color: #111;
+            display: inline-block;
+            padding: 0.625rem 0;
+        }
+
+        li.price:before,
+        li.subtotal:before {
+            content: '';
+        }
+
+        .item {
+            width: 55%;
+        }
+
+        li.item.item-heading {
+            font-size: 20px;
+        }
+
+        li.price {
+            font-size: 20px;
+        }
+
+        .price b {
+            color: black;
+        }
+
+        .subtotal b {
+            color: black;
+        }
+
+        .price::before {
+            color: black;
+        }
+
+        li.quantity {
+            font-size: 20px;
+        }
+
+        li.subtotal {
+            font-size: 20px;
+        }
+
+        .price,
+        .quantity,
+        .subtotal {
+            width: 15%;
+        }
+
+        .subtotal {
+            text-align: right;
+        }
+
+        .remove {
+            bottom: 1rem;
+            float: right;
+            position: absolute;
+            right: 40%;
+            text-align: right;
+            width: 45%;
+        }
+
+        .addtocart {
+            bottom: 1rem;
+            float: left;
+            position: absolute;
+            right: 59.5%;
+            text-align: right;
+            width: 45%;
+        }
+
+        .remove button {
+            background-color: transparent;
+            color: black;
+            float: none;
+            text-decoration: none;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+
+        .addtocart button {
+            background-color: transparent;
+            color: black;
+            float: none;
+            text-decoration: none;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+
+        .item-heading {
+            padding-left: 4.375rem;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        .basket-product {
+            border-bottom: 3px solid #ccc;
+            padding: 2rem 0 2rem 1rem;
+            position: relative;
+        }
+
+        .product-image {
+            width: 35%;
+        }
+
+        .product-details {
+            width: 60%;
+        }
+
+        .product-frame {
+            border-radius: 10px;
+        }
+
+        .product-details {
+            padding: 0 1.5rem;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            color: black;
+            font-size: 15px;
+        }
+
+        strong {
+            font-size: 15px;
+        }
+
+        .quantity-field {
+            background-color: #ccc;
+            border: 1px solid #aaa;
+            border-radius: 4px;
+            font-size: 0.625rem;
+            padding: 2px;
+            width: 3rem;
+        }
+
+        aside {
+            float: right;
+            position: relative;
+            width: 30%;
+        }
+
+        .summary {
+            background-color: #eee;
+            border: 1px solid #aaa;
+            padding: 1rem;
+            margin-top: 10px;
+            margin-left: 25px;
+            width: 250px;
+            height: 500px;
+            -webkit-box-sizing: border-box;
+            border-radius: 10px;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        .summary-total-items {
+            color: black;
+            font-size: 0.875rem;
+            text-align: center;
+        }
+
+        span.total-items {
+            font-weight: 700;
+        }
+
+        .summary-subtotal,
+        .summary-total {
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            clear: both;
+            margin: 1rem 0;
+            overflow: hidden;
+            padding: 0.5rem 0;
+        }
+
+        .subtotal-title,
+        .subtotal-value,
+        .total-title,
+        .total-value,
+        .promo-title,
+        .promo-value {
+            color: black;
+            float: left;
+            width: 50%;
+        }
+
+        .summary-promo {
+            -webkit-transition: all .3s ease;
+            -moz-transition: all .3s ease;
+            -o-transition: all .3s ease;
+            transition: all .3s ease;
+        }
+
+        .promo-title {
+            float: left;
+            width: 70%;
+        }
+
+        .promo-value {
+            color: #8B0000;
+            float: left;
+            text-align: right;
+            width: 30%;
+        }
+
+        .summary-delivery {
+            padding-bottom: 3rem;
+        }
+
+        .subtotal-value,
+        .total-value {
+            text-align: right;
+        }
+
+        .total-title {
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .cartw {
+            display: block;
+            margin-top: 143%;
+        }
+
+        .cartw b {
+            font-size: 13.5px;
+        }
+
+        .cartw-cta {
+            display: block;
+            float: none;
+            font-size: 0.75rem;
+            text-align: center;
+            text-transform: uppercase;
+            padding: 0.625rem 0;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .cartw-cta:hover {
+            background-color: blue;
+            transition: 0.7s;
+        }
+
+
+        .summary-delivery-selection {
+            background-color: #ccc;
+            border: 1px solid #aaa;
+            border-radius: 4px;
+            display: block;
+            font-size: 14px;
+            height: 34px;
+            width: 100%;
+        }
+
+        body {
+            background-color: rgb(207, 207, 207);
+            background: url(../images/background2.png);
+            min-height: 100vh;
+            width: 100%;
+            background-position: center;
+            background-size: cover;
+            position: relative;
+        }
+
+        .overlay {
+            width: 100%;
+            height: 100%;
+            background: black;
+            opacity: .2;
+            position: absolute;
+            z-index: -1000;
+        }
+
+        .logo {
+            margin-left: 60px;
+            position: relative;
+            width: 120px;
+            height: 120px;
+            background: url(../images/logo.png);
+            background-repeat: no-repeat;
+            background-size: 130px;
+            background-position: center;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .title {
+            font-family: 'Open Sans', sans-serif;
+            justify-content: center;
+            position: relative;
+            text-align: center;
+            margin-left: 5%;
+        }
+
+        .title h1 {
+            font-size: 35px;
+            color: black;
+            margin-top: -30px;
+        }
+
+        .wishlist {
+            font-size: 22px;
+            cursor: pointer;
+            color: black;
+            z-index: 1000;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .wishlist:hover {
+            color: red;
+        }
+
+        .fas {
+            color: red;
+            transition: 0.4s;
+        }
+
+        @media screen and (max-width: 640px) {
+            body {
+                min-height: 160vh;
+            }
+
+            .borderluar {
+                align-items: center;
+                height: 720px;
+                width: 473px;
+                margin-left: 0.25%;
+                border: 3px solid grey;
+                border-radius: 5px;
+                background-color: #c7d0d8;
+            }
+
+            .borderdalem {
+                background-color: #b1bcc5;
+                width: 91%;
+                height: 97%;
+                border-radius: 5px;
+                margin-top: 13px;
+                margin-left: 22px;
+            }
+
+            aside,
+            .basket,
+            .summary,
+            .item,
+            .wishlist .remove {
+                width: 100%;
+            }
+
+            .basket-labels {
+                display: none;
+            }
+
+            .basket-module {
+                margin-bottom: 1rem;
+            }
+
+            .item {
+                margin-bottom: 1rem;
+            }
+
+            .product-image {
+                width: 32%;
+            }
+
+            .product-details {
+                width: 60%;
+            }
+
+            .price,
+            .subtotal {
+                width: 30%;
+            }
+
+            .quantity {
+                text-align: center;
+                width: 34%;
+                margin-left: -13%;
+            }
+
+            .quantity-field {
+                float: none;
+            }
+
+            .remove {
+                bottom: 0;
+                text-align: left;
+                margin-top: 0.75rem;
+                position: relative;
+            }
+
+            .addtocart {
+                padding-top: 10px;
+                bottom: 1rem;
+                float: left;
+                position: relative;
+                left: -7%;
+                text-align: right;
+                width: 30%;
+            }
+
+            .remove button {
+                padding: 0;
+                position: absolute;
+                margin-left: 48px;
+            }
+
+            .addtocart button {
+                padding-top: 16px;
+            }
+
+            .summary {
+                position: relative;
+                background-color: #eee;
+                border: 1px solid #aaa;
+                padding: 1rem;
+                margin-top: 30px;
+                margin-left: -1px;
+                width: -1000px;
+                height: 300px;
+                -webkit-box-sizing: border-box;
+                border-radius: 10px;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+            }
+
+            .title {
+                font-family: 'Open Sans', sans-serif;
+                justify-content: center;
+                font-size: 500px;
+                position: relative;
+                text-align: center;
+                margin-right: 30px;
+                margin-top: -70px;
+            }
+
+            .cartw-cta {
+                position: relative;
+                display: block;
+                float: none;
+                font-size: 0.75rem;
+                text-align: center;
+                text-transform: uppercase;
+                padding: 0.625rem 0;
+                width: 100%;
+                border-radius: 5px;
+                cursor: pointer;
+                margin-top: -450px;
+            }
+
+            .cartw-cta:hover {
+                background-color: blue;
+                transition: 0.7s;
+            }
+        }
+
+        @media screen and (min-width: 641px) and (max-width: 960px) {
+            body {
+                overflow-x: hidden;
+                overflow-y: hidden;
+
+            }
+
+            .overlay {
+                width: 125%;
+                height: 115%;
+            }
+
+            .title h1 {
+                width: 100%;
+                margin-left: 0%;
+                font-size: 50px;
+            }
+
+            .borderluar {
+                height: 550px;
+                width: 690px;
+                margin: 0% 10% 0% 4%;
+            }
+
+            .borderdalem {
+                width: 95.5%;
+                height: 95%;
+                margin: 2% 2% 2% 2%;
+            }
+
+            .basket-labels {
+                width: 99%;
+            }
+
+            li.item.item-heading {
+                font-size: 15px;
+                padding: 2% 10% 0% 17%;
+                width: 10%;
+            }
+
+            li.price {
+                font-size: 15px;
+                padding: 2% 0% 0% 20%;
+            }
+
+            li.quantity {
+                font-size: 15px;
+                padding: 2% 2% 0% 0%;
+            }
+
+            li.subtotal {
+                font-size: 15px;
+                padding: 2% 0% 0% 2%;
+            }
+
+
+            .item-heading {
+                padding-left: 4.375rem;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+            }
+
+            .basket-product {
+                border-bottom: 3px solid #ccc;
+                padding: 2% 0% 2% 3%;
+                position: relative;
+                width: 96%;
+            }
+
+            .item {
+                width: 42%;
+            }
+
+            .product-details {
+                padding-left: 2%;
+                width: 60%;
+            }
+
+            .product-details strong {
+                font-size: 12px;
+            }
+
+            .product-details p {
+                margin-top: 2%;
+            }
+
+            div.price {
+                width: 15%;
+                font-size: 11px;
+            }
+
+            .quantity-field {
+                width: 50%;
+                margin-left: 47%;
+            }
+
+            div.subtotal {
+                font-size: 11px;
+                margin-left: 9%;
+            }
+
+            .summary {
+                width: 95%;
+                margin: 6% 5% 0% 0%;
+            }
+
+            .addtcart {
+                margin-top: 195%;
+            }
+
+            .remove button {
+                margin-left: 100%;
+                width: 100%;
+            }
+
+            .addtocart button {
+                width: 100%;
+                margin-left: 80%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="overlay"></div>
+
+    <a href="/">
+        <div class="logo"></div>
+    </a>
+
+    <div class="title">
+        <h1><b>Wish List</b></h1>
+    </div>
+
+    <main>
+        <div class="borderluar">
+
+            <div class="borderdalem">
+
+                <div class="basket">
+                    <div class="basket-labels">
+                        <ul>
+                            <li class="item item-heading"><b>Item</b></li>
+                            <li class="price"><b>Price</b></li>
+                            <li class="quantity"><b>Quantity</b></li>
+                            <li class="subtotal"><b>Subtotal</b></li>
+                        </ul>
+                    </div>
+
+                    <% if(products.length> 0) { %>
+                        <% products.forEach(function(items){ %>
+                            <div class="basket-product">
+                                <div class="item">
+
+                                    <div class="product-image">
+                                        <a href="<%= items.item.link %>">
+                                            <img src="<%= items.item.imagePath %>" alt="" class="product-frame">
+                                        </a>
+                                    </div>
+
+                                    <div class="product-details">
+                                        <h1><strong>
+                                                <%= items.item.name %>
+                                            </strong></h1>
+                                    </div>
+                                </div>
+
+                                <div class="price"><b>
+                                        <%= items.item.price %>
+                                    </b></div>
+
+                                <div class="quantity">
+                                    <span class="input-group-btn">
+                                        <a href="/wishlist/reduce-w/<%= items.item._id %>"><button type="button"
+                                                class="btn btn-default btn-number" data-type="minus"
+                                                data-field="quant[1]">
+                                                -</button></a>
+                                    </span>
+                                    <input type="text" name="quant[1]" value="<%= items.qty %>" min="0"
+                                        class="quantity-field">
+                                    <span class="input-group-btn">
+                                        <a href="/wishlist/increase-w/<%= items.item._id %>"><button type="button"
+                                                class="btn btn-default btn-number" data-type="plus"
+                                                data-field="quant[1]">
+                                                +</button></a>
+                                    </span>
+                                </div>
+
+                                <div class="subtotal"><b>
+                                        <%= items.price %>
+                                    </b></div>
+
+                                <div class="remove">
+                                    <a href="/wishlist/remove-w/<%= items.item._id %>">
+                                        <button><i class="fa fa-close"></i> Remove</button>
+                                    </a>
+                                </div>
+                                <div class="addtocart">
+                                    <a href="/wishlist/add-to-cart-from-wishlist/<%= items.item._id %>">
+                                        <button><i class="fa fa-plus"></i> Add To
+                                            Cart</button>
+                                    </a>
+                                </div>
+                            </div>
+                            <% }); %>
+                </div>
+
+                <aside>
+                    <div class="summary">
+                        <div class="summary-total-items"><span class="total-items"></span><b> Items in your Wishlist</b>
+                        </div>
+
+                        <div class="summary-subtotal">
+                            <div class="subtotal-title"><b>Subtotal</b></div>
+
+                            <div class="subtotal-value final-value" id="basket-subtotal"><b>
+                                    <%= totalPrice %>
+                                </b></div>
+
+                            <div class="summary-promo hide">
+                                <div class="promo-title">Promotion</div>
+                                <div class="promo-value final-value" id="basket-promo"></div>
+                            </div>
+                        </div>
+
+                        <div class="summary-total">
+                            <div class="total-title">Total</div>
+                            <div class="total-value final-value" id="basket-total"><b>
+                                    <%= totalPrice %>
+                                </b></div>
+                        </div>
+
+                        <div class="cartw">
+                            <a href="/cart"><button class="cartw-cta"><b>Cart</b></button></a>
+                        </div>
+                    </div>
+                </aside>
+                <% } %>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

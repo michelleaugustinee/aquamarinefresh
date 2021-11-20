@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+  <title>Sign Up || Aquamarine</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="shortcut icon" href="../images/logo.png" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="gettext" type="application/x-po" href="languages/en/LC_MESSAGES/en.po" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;600&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css2?family=Oregano&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&family=Oregano&display=swap"
+    rel="stylesheet" />
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
+  <script src="assets/js/geodatasource-cr.min.js"></script>
+  <script type="text/javascript" src="assets/js/Gettext.js"></script>
+
+  <style>
+    body {
+      background-color: rgb(207, 207, 207);
+      background: url(../images/background2.png);
+      min-height: 100vh;
+      width: 100%;
+      background-position: center;
+      background-size: cover;
+      position: relative;
+    }
+
+    .overlay {
+      width: 100%;
+      height: 100%;
+      background: black;
+      opacity: 0.2;
+      position: absolute;
+    }
+
+    .logo {
+      margin-left: 60px;
+      padding: 50px;
+      position: relative;
+      width: 120px;
+      height: 120px;
+      background: url(../images/logo.png);
+      background-repeat: no-repeat;
+      background-size: 130px;
+      background-position: center;
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    .title {
+      font-family: "Open Sans", sans-serif;
+      justify-content: center;
+      position: relative;
+      text-align: center;
+    }
+
+    .profile {
+      text-align: center;
+    }
+
+    .sign-up {
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .right {
+      width: 243.8px;
+    }
+
+    .form-select {
+      color: grey;
+    }
+
+    .submit {
+      text-align: center;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .login {
+      position: relative;
+      text-align: center;
+      cursor: pointer;
+      z-index: 1000;
+      margin-top: 5px;
+    }
+
+    .username {
+      display: block;
+      border: none;
+      text-align: left;
+    }
+
+    .input-container[data-error] .form-control {
+      border-color: red;
+    }
+
+    @media screen and (max-width: 640px) {
+      .left {
+        width: 50%;
+      }
+
+      .right {
+        width: 50%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="overlay"></div>
+
+  <a href="/">
+    <div class="logo"></div>
+  </a>
+
+  <div class="title">
+    <h1><b>Sign Up</b></h1>
+  </div>
+
+  <div class="profile">
+    <i data-feather="user" style="width: 65px; height: 65px;"></i>
+  </div>
+
+  <form method="post" action="/user/signup">
+    <div class="sign-up">
+      <div class="left">
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1">@</span>
+          <input type="username" class="form-control" placeholder="Username" aria-label="Username"
+            data-error="Sorry, that username is taken." aria-describedby="basic-addon1" name="username" required>
+        </div>
+        <div class="input-group mb-3">
+          <input type="email" class="form-control" placeholder="Email Address" aria-label="EmailAddress" name="email"
+            required>
+        </div>
+        <div class="input-group mb-3">
+          <input type="password" class="form-control" placeholder="Password" aria-label="password" name="password"
+            required>
+        </div>
+        <div class="input-group mb-3">
+          <input type="password" class="form-control" placeholder="Confirm Your Password" aria-label="password"
+            name="password_" required>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="col-md-12">
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="col-md-12">
+          </div>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Full Name" aria-label="FullName" name="name" required>
+        </div>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Phone Number" aria-label="number" name="phone" required>
+        </div>
+        <div class="input-group mb-3">
+          <select class="form-select" aria-label=".form-select-lg example" name="country" required>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <option selected disabled>Choose Country...</option>
+              <option value="Australia">Australia</option>
+              <option value="Austria">Austria</option>
+              <option value="Bangladesh">Bangladesh</option>
+              <option value="Brunei">Brunei</option>
+              <option value="Cambodia">Cambodia</option>
+              <option value="China">China</option>
+              <option value="Colombia">Colombia</option>
+              <option value="Denmark">Denmark</option>
+              <option value="East Timor">East Timor</option>
+              <option value="Finland">Finland</option>
+              <option value="Hong Kong">Hong Kong</option>
+              <option value="Indonesia">Indonesia</option>
+              <option value="India">India</option>
+              <option value="Japan">Japan</option>
+              <option value="Korea North">Korea North</option>
+              <option value="Korea South">Korea South</option>
+              <option value="Laos">Laos</option>
+              <option value="Macau">Macau</option>
+              <option value="Malaysia">Malaysia</option>
+              <option value="Myanmar">Myanmar</option>
+              <option value="New Zealand">New Zealand</option>
+              <option value="Papua New Guinea">Papua New Guinea</option>
+              <option value="Phillipines">Philippines</option>
+              <option value="Portugal">Portugal</option>
+              <option value="Singapore">Singapore</option>
+              <option value="Taiwan">Taiwan</option>
+              <option value="Thailand">Thailand</option>
+              <option value="Vietnam">Vietnam</option>
+          </select>
+        </div>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Full Address" aria-label="Address" name="address"
+            required>
+        </div>
+      </div>
+    </div>
+
+    <div class="submit">
+      <button type="submit" class="btn btn-primary center-block"><a style="color: white; text-decoration: none;">Sign
+          Up</a></button>
+    </div>
+    <% if(locals.error) { %>
+      <span class="text-danger pl-2" style="font-size: 2.2vh; margin-left: 44%;">
+        <%= error %>
+      </span>
+      <% } %>
+
+        <div class="login">
+          Already Have an Account? <a href="/login"
+            style="color: black; text-decoration: none;"><b>Login</b></a></label>
+        </div>
+  </form>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+  <script>
+    feather.replace()
+  </script>
+
+</body>
+
+</html>

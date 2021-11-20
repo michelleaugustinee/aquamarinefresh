@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+  <title>Login || Aquamarine</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="shortcut icon" href="images/logo.png" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="gettext" type="application/x-po" href="languages/en/LC_MESSAGES/en.po" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;600&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css2?family=Oregano&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&family=Oregano&display=swap"
+    rel="stylesheet" />
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
+  <script src="assets/js/geodatasource-cr.min.js"></script>
+  <script type="text/javascript" src="assets/js/Gettext.js"></script>
+
+  <style>
+    body {
+      background-color: rgb(207, 207, 207);
+      background: url(../images/background2.png);
+      min-height: 100vh;
+      width: 100%;
+      background-position: center;
+      background-size: cover;
+      position: relative;
+    }
+
+    .overlay {
+      width: 100%;
+      height: 100%;
+      background: black;
+      opacity: 0.2;
+      position: absolute;
+    }
+
+    .logo {
+      margin-left: 60px;
+      padding: 50px;
+      position: relative;
+      width: 120px;
+      height: 120px;
+      background: url(../images/logo.png);
+      background-repeat: no-repeat;
+      background-size: 130px;
+      background-position: center;
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    .title {
+      font-family: "Open Sans", sans-serif;
+      justify-content: center;
+      position: relative;
+      text-align: center;
+    }
+
+    .profile {
+      text-align: center;
+    }
+
+    .Login {
+      text-align: center;
+      margin: 0 40%;
+      padding: 20px 0;
+    }
+
+    .form-select {
+      color: grey;
+    }
+
+    .submit {
+      text-align: center;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .forget {
+      position: relative;
+      text-align: center;
+      cursor: pointer;
+      z-index: 1000;
+      margin-top: 3%;
+    }
+
+    .acc {
+      position: relative;
+      text-align: center;
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    @media screen and (max-width: 770px) {
+      .Login {
+        align-items: center;
+        margin: 0 25%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="overlay"></div>
+
+  <a href="/">
+    <div class="logo"></div>
+  </a>
+
+  <div class="title">
+    <h1><b>Login</b></h1>
+  </div>
+
+  <div class="profile">
+    <i data-feather="user" style="width: 65px; height: 65px"></i>
+  </div>
+
+  <form method="post" action="/user/login">
+    <div class="Login">
+      <div class="center">
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1">@</span>
+          <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+            aria-describedby="basic-addon1" name="username" required>
+        </div>
+        <div class="input-group mb-3">
+          <input type="password" class="form-control" placeholder="Password" aria-label="password" name="password"
+            required>
+        </div>
+      </div>
+
+      <div class="submit">
+        <button type="submit" class="btn btn-primary center-block" name="submit" id="submit">
+          Login
+        </button>
+      </div>
+      <% if (locals.error) { %>
+        <span class="text-danger pl-2" style="font-size: 2.2vh">
+          <%= error %>
+        </span>
+        <% } %>
+
+          <div class="forget">
+            <label>Forgot password?
+              <a href="/forget" style="color: black; text-decoration: none"><b>Click here</b></a></label>
+          </div>
+
+          <div class="acc">
+            <label>Don't have account?
+              <a href="/signup" style="color: black; text-decoration: none"><b>Sign up</b></a></label>
+          </div>
+    </div>
+  </form>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+  <script>
+    feather.replace();
+  </script>
+</body>
+
+</html>

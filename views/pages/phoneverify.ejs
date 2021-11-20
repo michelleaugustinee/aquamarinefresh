@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+    <title>Phone Verification || Aquamarine</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="shortcut icon" href="images/logo.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="gettext" type="application/x-po" href="languages/en/LC_MESSAGES/en.po" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Oregano&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&family=Oregano&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="assets/js/geodatasource-cr.min.js"></script>
+    <script type="text/javascript" src="assets/js/Gettext.js"></script>
+
+    <style>
+        body {
+            background-color: rgb(207, 207, 207);
+            background: url(../images/background2.png);
+            min-height: 100vh;
+            width: 100%;
+            background-position: center;
+            background-size: cover;
+            position: relative;
+        }
+
+        .overlay {
+            width: 100%;
+            height: 100%;
+            background: black;
+            opacity: .2;
+            position: absolute;
+        }
+
+        .logo {
+            margin-left: 60px;
+            padding: 50px;
+            position: relative;
+            width: 120px;
+            height: 120px;
+            background: url(../images/logo.png);
+            background-repeat: no-repeat;
+            background-size: 130px;
+            background-position: center;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .title {
+            font-family: 'Open Sans', sans-serif;
+            justify-content: center;
+            position: relative;
+            text-align: center;
+        }
+
+        .profile {
+            text-align: center;
+        }
+
+        .phoneverification {
+            text-align: center;
+            margin: 0 40%;
+            padding: 20px 0;
+        }
+
+        .confirmtext {
+            border: 2px solid black;
+            border-style: dotted;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            padding: 15px;
+        }
+
+        .confirmtext h4 {
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .form-select {
+            color: grey;
+        }
+
+        .submit {
+            text-align: center;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .acc {
+            position: relative;
+            text-align: center;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        @media screen and (max-width: 640px) {
+            .phoneverification {
+                width: 100%;
+                margin: 0% 0% 0% 0%;
+            }
+
+            .confirmtext {
+                margin: 0% 20% 5% 20%;
+            }
+
+            .form-control {
+                width: 100%;
+                margin: 0% 30% 0% 30%;
+                text-align: center;
+            }
+
+        }
+
+        @media screen and (min-width: 640px) and (max-width: 778px) {
+            body {
+                overflow-x: hidden;
+            }
+
+            .overlay {
+                overflow-x: hidden;
+                width: 120%;
+            }
+
+            .phoneverification {
+                width: 100%;
+                margin: 0% 0% 0% 0%;
+            }
+
+            .confirmtext {
+                width: 40%;
+                margin: 0% 20% 5% 30%;
+            }
+
+            .input-group {
+                align-items: center;
+                margin: 0 -5px;
+                width: 105%;
+            }
+
+            .form-control {
+                width: 100%;
+                text-align: center;
+                margin: 0% 30% 0% 26.5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="overlay"></div>
+
+    <a href="/">
+        <div class="logo"></div>
+    </a>
+
+    <div class="title">
+        <h1><b>Phone Number Verification</b></h1>
+    </div>
+
+    <div class="profile">
+        <i data-feather="user" style="width: 65px; height: 65px;"></i>
+    </div>
+
+    <div class="phoneverification">
+        <div class="confirmtext">
+            <h4>We've sent a text message to your phone number. Please check the code we sent and write down the
+                confirmation code</h4>
+        </div>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Confirmation Code" aria-label="confirmation">
+        </div>
+    </div>
+
+    <div class="submit">
+        <button type="submit" class="btn btn-primary center-block"> <a href="/changepass"
+                style="color: white; text-decoration: none;">Submit</a></button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <script>
+        feather.replace()
+    </script>
+</body>
+
+</html>

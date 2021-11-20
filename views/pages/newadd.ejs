@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+    <title>Add New Address || Aquamarine</title>
+
+    <link rel="shortcut icon" href="images/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&family=Oregano&display=swap"
+        rel="stylesheet">
+    <style>
+        @import url("https://rsms.me/inter/inter.css");
+
+        body {
+            background-color: rgb(207, 207, 207);
+            background: url(../images/background2.png);
+            min-height: 100vh;
+            width: 100%;
+            background-position: center;
+            background-size: cover;
+            position: relative;
+        }
+
+        .overlay {
+            width: 100%;
+            height: 120%;
+            background: black;
+            opacity: .2;
+            position: fixed;
+            z-index: -1000;
+        }
+
+        .logo {
+            margin-left: 60px;
+            padding: 50px;
+            position: relative;
+            width: 120px;
+            height: 120px;
+            background: url(../images/logo.png);
+            background-repeat: no-repeat;
+            background-size: 130px;
+            background-position: center;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .title {
+            font-family: 'Open Sans', sans-serif;
+            justify-content: center;
+            color: black;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .borderluar {
+            background-color: #c7d0d8;
+            margin: 3% 25% 1% 25%;
+            border: 3px solid grey;
+            border-radius: 5px;
+        }
+
+        .borderdalem {
+            background-color: #b1bcc5;
+            width: 95.5%;
+            border-radius: 5px;
+            padding-bottom: 30px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+
+        :root {
+            --color-gray: #737888;
+            --color-lighter-gray: #000;
+            --color-light-gray: #000;
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        html {
+            font-family: "Inter", sans-serif;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+
+        @supports (font-variation-settings: normal) {
+            html {
+                font-family: "Inter var", sans-serif;
+            }
+        }
+
+        body {
+            margin: 0;
+        }
+
+        h1 {
+            margin-bottom: 1rem;
+        }
+
+        p {
+            color: var(--color-black);
+        }
+
+        hr {
+            height: 1px;
+            width: 100%;
+            background-color: var(--color-black);
+            border: 0;
+            margin: 2rem 0;
+        }
+
+        .container {
+            padding: 5% 5% 5% 5%;
+        }
+
+        .form {
+            display: grid;
+            grid-gap: 1rem;
+        }
+
+        .field {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--color-lighter-gray);
+            padding: .5rem;
+            border-radius: .25rem;
+        }
+
+        .field__label {
+            color: var(--color-black);
+            font-size: 0.6rem;
+            font-weight: 300;
+            text-transform: uppercase;
+            margin-bottom: 0.25rem
+        }
+
+        .field__input {
+            padding: 0;
+            margin: 0;
+            border: 0;
+            outline: 0;
+            font-weight: bold;
+            font-size: 1rem;
+            width: 100%;
+            -webkit-appearance: none;
+            appearance: none;
+            background-color: transparent;
+        }
+
+        .field:focus-within {
+            border-color: #000;
+        }
+
+        .fields {
+            display: grid;
+            grid-gap: 1rem;
+        }
+
+        .fields--2 {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .fields--3 {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        .button {
+            background-color: blue;
+            text-transform: uppercase;
+            font-size: 15px;
+            font-weight: 600;
+            display: block;
+            color: #fff;
+            width: 30%;
+            margin-left: 35%;
+            margin-top: -8%;
+            padding: 1rem;
+            border-radius: 0.25rem;
+            border: 0;
+            cursor: pointer;
+            outline: 0;
+        }
+
+        .button:focus-visible {
+            background-color: #333;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        @media screen and (max-width: 620px) {
+            .borderluar {
+                margin: 0% 5% 5% 5%;
+            }
+
+            .borderdalem {
+                margin: 3% 0% 3% 2%;
+            }
+        }
+
+        @media screen and (min-width: 640px) and (max-width: 960px) {
+            .borderluar {
+                margin: 5% 5% 0% 5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="overlay"></div>
+
+    <a href="/">
+        <div class="logo"></div>
+    </a>
+
+    <div class="title">
+        <h1><b>Add New Address</b></h1>
+    </div>
+
+    <div class="borderluar">
+        <div class="borderdalem">
+            <div class="collapse navbar-collapse" id="navbarNav">
+            </div>
+            </nav>
+
+            <div class="container">
+                <div class="form">
+
+                    <div class="fields fields--2">
+                        <label class="field">
+                            <span class="field__label" for="firstname">First name</span>
+                            <input class="field__input" type="text" id="firstname" />
+                        </label>
+                        <label class="field">
+                            <span class="field__label" for="lastname">Last name</span>
+                            <input class="field__input" type="text" id="lastname" />
+                        </label>
+                    </div>
+
+                    <label class="field">
+                        <span class="field__label" for="address">Address</span>
+                        <input class="field__input" type="text" id="address" />
+                    </label>
+
+                    <label class="field">
+                        <span class="field__label" for="country">Country</span>
+                        <select class="field__input" type="country" id="country">
+                            <option value=""></option>
+                            <option value="Afghanistan">Afghanistan</option>
+                            <option value="Argentina">Argentina</option>
+                            <option value="Australia">Australia</option>
+                            <option value="Austria">Austria</option>
+                            <option value="Bangladesh">Bangladesh</option>
+                            <option value="Belgium">Belgium</option>
+                            <option value="Bhutan">Bhutan</option>
+                            <option value="Brazil">Brazil</option>
+                            <option value="Brunei">Brunei</option>
+                            <option value="Cambodia">Cambodia</option>
+                            <option value="Canada">Canada</option>
+                            <option value="Chile">Chile</option>
+                            <option value="China">China</option>
+                            <option value="Colombia">Colombia</option>
+                            <option value="Denmark">Denmark</option>
+                            <option value="East Timor">East Timor</option>
+                            <option value="Ecuador">Ecuador</option>
+                            <option value="Egypt">Egypt</option>
+                            <option value="Finland">Finland</option>
+                            <option value="France">France</option>
+                            <option value="Germany">Germany</option>
+                            <option value="Great Britain">Great Britain</option>
+                            <option value="Greece">Greece</option>
+                            <option value="Hawaii">Hawaii</option>
+                            <option value="Hong Kong">Hong Kong</option>
+                            <option value="Indonesia">Indonesia</option>
+                            <option value="India">India</option>
+                            <option value="Iran">Iran</option>
+                            <option value="Iraq">Iraq</option>
+                            <option value="Israel">Israel</option>
+                            <option value="Italy">Italy</option>
+                            <option value="Japan">Japan</option>
+                            <option value="Kazakhstan">Kazakhstan</option>
+                            <option value="Korea North">Korea North</option>
+                            <option value="Korea South">Korea South</option>
+                            <option value="Laos">Laos</option>
+                            <option value="Macau">Macau</option>
+                            <option value="Malaysia">Malaysia</option>
+                            <option value="Mexico">Mexico</option>
+                            <option value="Mongolia">Mongolia</option>
+                            <option value="Myanmar">Myanmar</option>
+                            <option value="Netherlands">Netherlands</option>
+                            <option value="New Zealand">New Zealand</option>
+                            <option value="Papua New Guinea">Papua New Guinea</option>
+                            <option value="Phillipines">Philippines</option>
+                            <option value="Portugal">Portugal</option>
+                            <option value="Russia">Russia</option>
+                            <option value="Saudi Arabia">Saudi Arabia</option>
+                            <option value="Singapore">Singapore</option>
+                            <option value="South Africa">South Africa</option>
+                            <option value="Spain">Spain</option>
+                            <option value="Switzerland">Switzerland</option>
+                            <option value="Taiwan">Taiwan</option>
+                            <option value="Thailand">Thailand</option>
+                            <option value="Turkey">Turkey</option>
+                            <option value="United Kingdom">United Kingdom</option>
+                            <option value="United Arab Emirates">United Arab Emirates</option>
+                            <option value="United States of America">United States of America</option>
+                            <option value="Vietnam">Vietnam</option>
+                        </select>
+                    </label>
+
+                    <label class="field">
+                        <span class="field__label" for="zipcode">Zip code</span>
+                        <input class="field__input" type="text" id="zipcode" />
+                    </label>
+
+                    <label class="field">
+                        <span class="field__label" for="city">City</span>
+                        <input class="field__input" type="text" id="city" />
+                    </label>
+
+                    <label class="field">
+                        <span class="field__label" for="state">State</span>
+                        <input class="field__input" type="text" id="state" />
+                    </label>
+                </div>
+            </div>
+            <hr>
+            <a href="/checkout">
+                <button class="button"><b>Continue</b></button>
+            </a>
+        </div>
+</body>
+
+</html>
